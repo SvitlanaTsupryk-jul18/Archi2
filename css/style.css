@@ -46,10 +46,6 @@ h1 {
     padding: 22px 78px; }
 
 .screen {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(200%);
   font-size: 50px;
   display: flex;
   max-width: 1170px;
@@ -290,22 +286,32 @@ h1 {
     stroke: url(#linear-gradient2);
     transform: scale(1.1); }
 
-.wrapper {
-  position: relative;
+html,
+body {
   margin: 0;
+  height: 100%; }
+
+.wrapper {
+  display: flex;
+  width: 300vw;
+  max-width: calc(1920px *3);
+  max-height: 100%;
   overflow: hidden;
-  height: 100vh;
-  width: 100vw; }
+  height: 100%; }
+  .wrapper::-webkit-scrollbar {
+    width: 0; }
 
-.show {
-  transform: translateX(-50%);
-  z-index: 1;
-  transition: all 1s; }
+.active {
+  color: #7358fb;
+  font-weight: bold; }
 
-.prevslide {
-  transform: translateX(-200%);
-  z-index: 1;
-  transition: all 1s; }
+.banner {
+  position: fixed;
+  top: 10px;
+  left: 10px; }
+
+.type {
+  margin: 0 auto; }
 
 @media only screen and (max-width: 1370px) {
   h1 {
@@ -347,12 +353,14 @@ h1 {
 
 @media only screen and (max-width: 1170px) {
   .type {
-    width: 570px;
+    width: calc(100vw - 330px);
     height: 100%; }
   .rigth-screen {
     width: 300px; }
   .left-screen {
-    width: calc(100vw - 330px); } }
+    width: calc(100vw - 330px); }
+  h1 {
+    font-size: 46px; } }
 
 @media only screen and (max-width: 991px) and (min-width: 769px) {
   .left-screen {
