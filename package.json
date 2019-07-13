@@ -8,14 +8,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/SvitlanaTsupryk-jul18/Arch.git"
+        "url": "git+https://github.com/SvitlanaTsupryk-jul18/Archi2.git"
     },
     "author": "Svet",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/SvitlanaTsupryk-jul18/Arch/issues"
+        "url": "https://github.com/SvitlanaTsupryk-jul18/Archi2/issues"
     },
-    "homepage": "https://github.com/SvitlanaTsupryk-jul18/Arch#readme",
+    "homepage": "https://github.com/SvitlanaTsupryk-jul18/Archi2#readme",
     "devDependencies": {
         "browser-sync": "^2.26.3",
         "gulp": "^3.9.1",
