@@ -1,7 +1,6 @@
 (function () {
     // invocation
 
-    // Tween();
     scrollMagic();
     ChoosePrice();
     sendPhone();
@@ -10,8 +9,7 @@
     /////Gsap
 
     function scrollMagic() {
-        console.log(com.greensock.plugins.ScrollToPlugin.version);
-        // Init controller
+
         var controller = new ScrollMagic.Controller({
             globalSceneOptions: {
                 duration: $('.screen').height(),
@@ -20,7 +18,6 @@
             },
             vertical: false
         });
-
 
         var scenes = {
 
@@ -50,7 +47,6 @@
         }
 
         controller.scrollTo(function (target) {
-
             TweenMax.to(window, 0.5, {
                 scrollTo: {
                     x: target,
@@ -58,7 +54,6 @@
                 },
                 ease: Cubic.easeInOut
             });
-
         });
 
         var anchor_nav = document.querySelector('.anchor-nav');
@@ -70,7 +65,6 @@
             if (id !== null && id.length > 0) {
                 e.preventDefault();
                 controller.scrollTo(id);
-
                 if (window.history && window.history.pushState) {
                     history.pushState("", document.title, id);
                 }
@@ -84,7 +78,6 @@
 
             var normalized;
             var delta = event.wheelDelta;
-            var scroll = (window.pageXOffset || document.scrollLeft) - (document.clientLeft || 0) || 0;
 
             if (delta) {
                 normalized = (delta % 120) == 0 ? delta / 120 : delta / 12;
@@ -105,124 +98,28 @@
 
 
     // function Tween() {
-    //     let tl = new TimelineMax();
-    //     tl
-    //         .from('#left', 2, {
-    //             x: '-300%',
+    //     let controller = new ScrollMagic.Controller({
+    //         vertical: false
+    //     });
 
-    //         }, delay = 1)
-    //         .from('#right', 2, {
-    //             x: '300%',
-
-    //         }, "-=2")
-    //         .from('.wellcome__btn', .5, {
-    //             borderRadius: "30px"
-    //         })
-    //         .from('.logo__h1', 1, {
-    //             y: '-100',
-    //             opacity: 0
-    //         }, "-=0.5")
-    //         .staggerFrom(".nav__list", .5, {
-    //             y: '-50',
-    //             opacity: 0
-    //         }, 0.1, "-=0.25")
-    // }
-
-    // function scrollMagic() {
-    //     // init controller
-    //     let dur = document.querySelector(".screen").offsetWidth;
-    //     console.log(window.TweenMax);
-
-    //     var controller = new ScrollMagic.Controller({
-    //         globalSceneOptions: {
-    //             duration: dur,
-    //             triggerHook: .025,
-    //             reverse: true
+    //     let tween = TweenMax.staggerFrom(".site", 1, {
+    //             css: {
+    //                 scale: 0.1,
+    //                 opacity: 0
+    //             },
+    //             immediateRender: false,
+    //             // ease: Bounce.easeOut
     //         },
-    //         vertical: false,
-    //     });;
+    //         0.1, "-=0.1");
 
-    //     var tween = TweenMax.fromTo('#screen1', 1, {
-    //         x: 0
-    //     }, {
-    //         x: -100
-    //     });
-    //     var tween1 = TweenMax.to('#screen2', 1, {
-    //         x: 0
-    //     });
-    //     var tween2 = TweenMax.fromTo('#screen2', 1, {
-    //         x: 0
-    //     }, {
-    //         x: -100
-    //     });
-    //     var tween3 = TweenMax.to('#screen3', 1, {
-    //         x: 0
-    //     });
-    //     // create a scene
-
-    //     var scene = new ScrollMagic.Scene({
-    //             triggerElement: '#screen2', // starting scene, when reaching this element
-    //             // offset: 400
-    //         })
-    //         .setTween(tween)
-    //         .setTween(tween1)
-    //         .addTo(controller);
-    //     var scene2 = new ScrollMagic.Scene({
-    //             triggerElement: '#screen3', // starting scene, when reaching this element
-    //             // offset: 300
-    //         })
-    //         .setTween(tween2)
-    //         .setTween(tween3)
-    //         .addTo(controller);
-    // }
-    // function Tween() {
-    //     let tl = new TimelineMax();
-    //     tl
-    //         .from('#left', 2, {
-    //             x: '-300%',
-    //             ease: Bounce.easeOut
-    //         }, delay = 1)
-    //         .from('#right', 2, {
-    //             x: '300%',
-    //             ease: Bounce.easeOut
-    //         }, "-=2")
-    //         .from('.wellcome__btn', .5, {
-    //             borderRadius: "30px"
-    //         })
-    //         .from('.logo__h1', 1, {
-    //             y: '-100',
-    //             opacity: 0
-    //         }, "-=0.5")
-    //         .staggerFrom(".nav__list", .5, {
-    //             y: '-50',
-    //             opacity: 0
-    //         }, 0.1, "-=0.25")
-    // }
-
-    //     var tween = TweenMax.from('#about', 1, {
-    //         y: 500,
-    //         opacity: 0
-    //     });
-    //     var tween1 = TweenMax.from('#contacts', 1, {
-    //         y: 500,
-    //         opacity: 0
-    //     });
-    //     // create a scene
-
-    //     var scene = new ScrollMagic.Scene({
-    //             triggerElement: "#servises",
-    //             offset: 400
+    //     let scene = new ScrollMagic.Scene({
+    //             triggerElement: "#screen2",
+    //             // offset: 100
     //         })
     //         .setTween(tween)
     //         .addTo(controller);
-    //     var scene2 = new ScrollMagic.Scene({
-    //             triggerElement: "#clients",
-    //             offset: 300
-    //         })
-    //         .setTween(tween1)
-    //         .addTo(controller);
-    // }
 
+    // }
 
     /////// choosing the price of site type
 
